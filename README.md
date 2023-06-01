@@ -6,14 +6,13 @@ La Realidad Aumentada (RA) es una tecnología que complementa la percepción e i
 El objetivo de este proyecto es desarrollar una aplicación de realidad aumentada que utilice marcadores de imagen y comandos de voz para mejorar la interacción del usuario con el entorno virtual. Se buscará proporcionar una experiencia inmersiva y intuitiva, donde los usuarios puedan interactuar con objetos virtuales superpuestos en el mundo real a través de marcadores específicos y puedan controlar la aplicación utilizando comandos de voz naturales. Además, se pretende explorar el potencial de la realidad aumentada como herramienta educativa, ofreciendo información contextual y experiencias enriquecedoras mediante la combinación de imágenes y audio en tiempo real.
 
 # Objetivos especificos 👦
-Diseñar e implementar un algoritmo de reconocimiento de marcadores de imagen robusto y eficiente que permita la detección y seguimiento preciso de los marcadores en tiempo real.
-Desarrollar una interfaz de usuario intuitiva y fácil de usar que permita a los usuarios interactuar con los objetos virtuales superpuestos mediante comandos de voz.
+Diseñar e implementar un algoritmo de reconocimiento de marcadores de imagen robusto y eficiente.
+Desarrollar una interfaz de usuario intuitiva y fácil de usar.
 Investigar y seleccionar tecnologías de procesamiento de voz adecuadas para el reconocimiento y comprensión de comandos de voz naturales.
-Crear una biblioteca de objetos virtuales variados y de alta calidad que puedan ser superpuestos en los marcadores de imagen para proporcionar experiencias interactivas y educativas.
-Optimizar el rendimiento y la eficiencia del sistema de realidad aumentada, reduciendo la latencia y mejorando la fluidez de la experiencia del usuario.
-Realizar pruebas exhaustivas y evaluaciones de usabilidad para garantizar que la aplicación sea intuitiva, fácil de usar y proporcione una experiencia de realidad aumentada atractiva y satisfactoria.
+Optimizar el rendimiento y la eficiencia del sistema de realidad aumentada.
+Realizar pruebas exhaustivas y evaluaciones de usabilidad para garantizar que la aplicación sea intuitiva.
 Explorar posibles aplicaciones educativas de la realidad aumentada basada en marcadores de imagen y comandos de voz, y evaluar su efectividad en entornos de aprendizaje.
-Investigar y aplicar técnicas de aprendizaje automático o inteligencia artificial para mejorar la precisión y el rendimiento del reconocimiento de voz y la detección de marcadores de imagen.
+Investigar y aplicar técnicas de aprendizaje automático o inteligencia artificial.
 
 # Justificacion 🔎
 La realidad aumentada (RA) es una tecnología emergente con un gran potencial para mejorar la interacción entre el mundo real y el mundo virtual. Mediante el uso de marcadores de imagen y comandos de voz, es posible crear experiencias inmersivas y facilitar la interacción natural del usuario con objetos virtuales superpuestos en el entorno real. Este proyecto busca aprovechar esta tecnología en beneficio de los usuarios, ofreciendo una aplicación de RA que sea intuitiva, educativa y fácil de usar.
