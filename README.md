@@ -16,11 +16,12 @@ Explorar posibles aplicaciones educativas de la realidad aumentada basada en mar
 Investigar y aplicar técnicas de aprendizaje automático o inteligencia artificial para mejorar la precisión y el rendimiento del reconocimiento de voz y la detección de marcadores de imagen.
 
 # Justificacion 🔎
-"La realidad aumentada (RA) es una tecnología emergente con un gran potencial para mejorar la interacción entre el mundo real y el mundo virtual. Mediante el uso de marcadores de imagen y comandos de voz, es posible crear experiencias inmersivas y facilitar la interacción natural del usuario con objetos virtuales superpuestos en el entorno real. Este proyecto busca aprovechar esta tecnología en beneficio de los usuarios, ofreciendo una aplicación de RA que sea intuitiva, educativa y fácil de usar.
+La realidad aumentada (RA) es una tecnología emergente con un gran potencial para mejorar la interacción entre el mundo real y el mundo virtual. Mediante el uso de marcadores de imagen y comandos de voz, es posible crear experiencias inmersivas y facilitar la interacción natural del usuario con objetos virtuales superpuestos en el entorno real. Este proyecto busca aprovechar esta tecnología en beneficio de los usuarios, ofreciendo una aplicación de RA que sea intuitiva, educativa y fácil de usar.
 
 La combinación de marcadores de imagen y comandos de voz proporciona una forma eficiente y accesible de interactuar con la realidad aumentada. Los marcadores de imagen permiten una detección precisa y rápida de objetos del mundo real, lo que brinda una base sólida para superponer objetos virtuales de manera precisa y realista. Por otro lado, los comandos de voz ofrecen una forma natural de controlar y manipular los objetos virtuales, evitando la necesidad de interfaces complejas o dispositivos adicionales.
 
 Además, este proyecto tiene como objetivo explorar el potencial de la realidad aumentada como herramienta educativa. La posibilidad de superponer información contextual y experiencias interactivas en tiempo real sobre los marcadores de imagen, en combinación con el control mediante comandos de voz, puede ofrecer a los usuarios una forma única de aprender y comprender conceptos complejos de manera más efectiva y atractiva.
+
 # Requisitos 📚
 
 • Internet
