@@ -1,0 +1,453 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <script>
+            const showInfo = () => {
+              let y = 0;
+              const microButton = document.querySelector("#micro-button");
+              const infoButton = document.querySelector("#info-button");
+              const gitButton = document.querySelector("#git-button");
+              const text = document.querySelector("#text");
+        
+              microButton.setAttribute("visible", true);
+              setTimeout(() => {
+                infoButton.setAttribute("visible", true);
+              }, 300);
+              setTimeout(() => {
+                gitButton.setAttribute("visible", true);
+              }, 1200);
+        
+              let currentTab = '';
+              infoButton.addEventListener('click', function (evt) {
+                text.setAttribute("value", "Hola soy un lobo, creado por los estudiantes del instituto tecnologico de tlaxiaco, en la materia de realidad aumentada");
+              currentTab = 'info';
+              });
+              gitButton.addEventListener('click', function (evt) {
+                console.log("loc");
+                text.setAttribute("value", "Visita nuestro repositorio para ver como creamos esta pagina: https://github.com/SistemasTecTlaxiaco/PETS");
+                currentTab = 'git';
+              });
+              
+        
+            }
+        
+            const showAvatar = (onDone) => {
+              const avatar = document.querySelector("#avatar");
+              let z = -0.3;
+              const id = setInterval(() => {
+                z += 0.008;
+                if (z >= 0.3) {
+                  clearInterval(id);
+                  onDone();
+                }
+                avatar.setAttribute("position", "0 -0.25 " + z);
+              }, 10);
+            }
+        
+            AFRAME.registerComponent('mytarget', {
+              init: function () {
+                this.el.addEventListener('targetFound', event => {
+                  console.log("target found");
+                  showAvatar(() => {
+                    //
+                    setTimeout(() => {
+                      showInfo();
+                    }, 300);
+                  });
+                });
+                this.el.addEventListener('targetLost', event => {
+                  console.log("target found");
+                });
+                //this.el.emit('targetFound');
+              }
+            });
+          </script>
+        
+          <style>
+            body {
+              margin: 0;
+            }
+        
+            .example-container {
+              overflow: hidden;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+            }
+        
+            #example-scanning-overlay {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              left: 0;
+              right: 0;
+              top: 0;
+              bottom: 0;
+              background: transparent;
+              z-index: 2;
+            }
+        
+            @media (min-aspect-ratio: 1/1) {
+              #example-scanning-overlay .inner {
+                width: 50vh;
+                height: 50vh;
+              }
+            }
+        
+            @media (max-aspect-ratio: 1/1) {
+              #example-scanning-overlay .inner {
+                width: 80vw;
+                height: 80vw;
+              }
+            }
+        
+            #example-scanning-overlay .inner {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+        
+              background:
+                linear-gradient(to right, white 10px, transparent 10px) 0 0,
+                linear-gradient(to right, white 10px, transparent 10px) 0 100%,
+                linear-gradient(to left, white 10px, transparent 10px) 100% 0,
+                linear-gradient(to left, white 10px, transparent 10px) 100% 100%,
+                linear-gradient(to bottom, white 10px, transparent 10px) 0 0,
+                linear-gradient(to bottom, white 10px, transparent 10px) 100% 0,
+                linear-gradient(to top, white 10px, transparent 10px) 0 100%,
+                linear-gradient(to top, white 10px, transparent 10px) 100% 100%;
+              background-repeat: no-repeat;
+              background-size: 40px 40px;
+            }
+        
+            #example-scanning-overlay.hidden {
+              display: none;
+            }
+        
+            #example-scanning-overlay img {
+              opacity: 0.6;
+              width: 90%;
+              align-self: center;
+            }
+        
+            #example-scanning-overlay .inner .scanline {
+              position: absolute;
+              width: 100%;
+              height: 10px;
+              background: white;
+              animation: move 2s linear infinite;
+            }
+        
+            @keyframes move {
+        
+              0%,
+              100% {
+                top: 0%
+              }
+        
+              50% {
+                top: calc(100% - 10px)
+              }
+            }
+        
+            #text {
+              font-family: Verdana;
+              font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+            }
+        
+            .contenedor {
+              margin: 0px;
+              height: 100vh;
+              width: 100vw;
+              background-image: radial-gradient(circle at 52.12% 74.26%, #a225c9 0, #8120b8 25%, #5f19a4 50%, #3c1290 75%, #110d7c 100%);
+              position: fixed;
+              z-index: 9999;
+              transition: all 1.5s;
+            }
+        
+            .carga,
+            .carga:before,
+            .carga:after {
+              width: 100%;
+              height: 100%;
+            }
+        
+            .rotate-45 {
+              transform-origin: center;
+              transform: rotate(45deg)
+            }
+        
+            .rotate {
+              transform-origin: center;
+              animation: rotate 1s ease-in-out infinite;
+            }
+        
+            .rotate-back {
+              transform-origin: center;
+              animation: rotate 1s ease-in-out infinite;
+              animation-direction: reverse;
+            }
+        
+            .left1 {
+              animation: moved 1s ease-in-out infinite;
+            }
+        
+            .right1 {
+              animation: moved 1s ease-in-out infinite;
+            }
+        
+            @keyframes rotate {
+              100% {
+                transform: rotate(calc(90deg + 45deg))
+              }
+            }
+        
+            @keyframes moved {
+              50% {
+                transform: translate(-30px, -30px)
+              }
+            }
+          </style>
+          <script>
+            window.addEventListener('load', () => {
+              const contenedor = document.querySelector('.contenedor');
+              contenedor.style.visibility = 'hidden';
+              contenedor.style.opacity = 0;
+              contenedor.setAttribute("visible", false);
+            });
+          </script>
+        </head>
+        
+        <body>
+          <div class="contenedor">
+          </div>
+          
+          <div class="example-container">
+            <div id="example-scanning-overlay" class="hidden">
+              <div class="inner">
+                <img src="https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/6b7e3e7f-c9d5-4c78-a021-a893dfd898ba.png?v=1685567911073" />
+                <div class="scanline"></div>
+              </div>
+            </div>
+            
+            <a-scene
+              mindar-image="imageTargetSrc: https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/targets.mind?v=1685568908071; showStats: false; uiScanning: #example-scanning-overlay;"
+              embedded color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false"
+              device-orientation-permission-ui="enabled: false" loading-screen="backgroundColor: black">
+              <a-assets>
+                <img id="ar" src="https://cdn.glitch.global/1f60efde-b7bd-4af3-91ea-626ce6b6b02e/VN.png?v=1685562680859" />
+                <img id="icon-micro" src="https://cdn.glitch.global/2438b448-b8b3-4153-a94e-fe3cd5b69162/microfono.png?v=1685500255825" />
+                <img id="icon-info" src="https://cdn.glitch.global/2438b448-b8b3-4153-a94e-fe3cd5b69162/info.png?v=1685500279935" />
+                <img id="icon-git" src="https://cdn.glitch.global/2438b448-b8b3-4153-a94e-fe3cd5b69162/github.png?v=1685500313476" />
+                
+                <a-asset-item 
+                  id="Modelo3D"
+                  src="https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551">
+                </a-asset-item>
+                <!-- a-asset-item id="iron" src="https://cdn.glitch.global/16b440ad-e892-4085-9aee-0cf4887d328f/iron.glb?v=1653086416853"></a-asset-item>
+                  <a-asset-item id="luna" src="https://cdn.glitch.global/16b440ad-e892-4085-9aee-0cf4887d328f/LUNA.glb?v=1653087819401"></a-asset-item -->
+              </a-assets>
+        
+              <a-camera position="0 0 0" look-controls="enabled: false" cursor="fuse: false; rayOrigin: mouse;"
+                raycaster="far: 10000; objects: .clickable"></a-camera>
+              
+              <a-entity id="mytarget" mytarget mindar-image-target="targetIndex: 0">
+                
+                <a-image visible=false id="micro-button" class="clickable" src="#icon-micro" position="-0.62 -0.5 0" height="0.15"
+                  width="0.15"
+                  animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-image>
+        
+                <a-image visible=false id="info-button" class="clickable" src="#icon-info" position="-0.10 -0.5 0" height="0.15"
+                  width="0.15"
+                  animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-image>
+        
+                <a-image visible=false id="git-button" class="clickable" src="#icon-git" position="0.62 -0.5 0" height="0.15"
+                  width="0.15"
+                  animation="property: scale; to: 1.2 1.2 1.2; dur: 1000; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-image>
+              
+                <a-gltf-model id="avatar" rotation="360 0 0" position="0 -0.25 0" scale="2.0 2.0 2.0 " src="#Modelo3D"
+                  animation-mixer>
+                </a-gltf-model>
+              
+                <a-text id="text" class="clickable"
+                  value="Da clic sobre alguno de los botones para ver la funcionalidad de la aplicación" color="white"
+                  align="center" width="1" position="0 -1.001 0" geometry="primitive:plane; height: 0.5; width: 1.4;"
+                  material="color: black; opacity: 0.5"></a-text>
+                 </a-entity>
+            
+            </a-scene>
+          
+          </div>
+          
+        </body>
+        
+        <script>
+          window.contador = 0;
+          window.contadorcubogrande = 0;
+          var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+          var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+          var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+          
+          
+        
+          var arreglovoz = [  'hola lobo',
+          'gracias lobo',
+          'eso es todo por ahora',
+          'lobo ¿cuando te descubrieron?',
+          'lobo ¿desde que año existes?',
+          'cuantos especies de ustedes existen',
+          'lobo cuenta tu historia',
+          'gracias lobo',
+          'eso es todo por ahora',
+          'lobo ataca',
+          'lobo quieto',];
+      
+          
+        
+          var grammar = '#JSGF V1.0; grammar arreglovoz; public <arreglovoz> = ' + arreglovoz.join(' | ') + ' ;'
+        
+          var recognition = new SpeechRecognition();
+          var speechRecognitionList = new SpeechGrammarList();
+          speechRecognitionList.addFromString(grammar, 1);
+          recognition.grammars = speechRecognitionList;
+          recognition.continuous = false;
+          recognition.lang = 'es-MX';
+          recognition.interimResults = false;
+          recognition.maxAlternatives = 1;
+        
+          var diagnostic = document.querySelector('#text'); 
+          var vozHTML = '';
+          arreglovoz.forEach(function (v, i, a) {
+            console.log(v, i);
+        
+          });
+        
+          window.onload = function() 
+        {
+          function micro(){
+          recognition.start();
+          console.log('Estoy listo para escuchar.');
+          }
+          document.getElementById('micro-button').onclick = micro;
+        }
+        
+          recognition.onresult = function (event) 
+          {
+            var voz = event.results[0][0].transcript;         
+            diagnostic.setAttribute("value", "Dijiste: " + voz + ".");
+            bg = voz;
+            var bg = document.querySelector('text');
+        
+        
+            //VISUALIZO EN CONSOLA
+            console.log(bg);
+            console.log(voz);
+        
+            function randD(array) {
+              var rand = Math.random() * array.length | 0;
+              var result = array[rand];
+              return result;
+            }
+        
+            // Interacciones iniciales
+            if (voz === 'Hola lobo') {
+              console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('Hola amigo, bienvenido. Estoy listo. Te escucho...')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+        
+        
+            if (voz === 'Gracias lobo') {
+              console.log("Estas dando las gracias");
+              let utterance = new SpeechSynthesisUtterance('De nada amigo, quieres que te ayude con algo mas?')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+        
+        
+            if (voz === 'eso es todo por ahora') {
+              console.log("Hola, estas saludando!");
+              let utterance = new SpeechSynthesisUtterance('De nada amigo, siempre es un placer ayudarte.')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+        
+            if (voz === 'Lobo cuando te descubrieron') {
+              console.log("lobo cuenta su descubrimento!");
+              let utterance = new SpeechSynthesisUtterance('El lobo es una especie de mamífero placentario del orden de los carnívoros. El naturalista Carlos Linneo, en la décima edición de su obra Systema naturæ, publicada en 1758.')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+        
+            if (voz === 'lobo desde qué año existe') {
+              console.log("Lobo, cuenta su existencia");
+              let utterance = new SpeechSynthesisUtterance('La evolución del lobo tuvo lugar durante unos 800 000 años, cuando aparecen los primeros ejemplares morfológicamente similares al lobo (Canis lupus).')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+        
+            if (voz === 'lobo cuenta tu historia'){
+              console.log("lobo, cuenta su historia");
+              let utterance = new SpeechSynthesisUtterance('Yo existia hace mucho tiempo. Hay dos teorías que podrían explicar esta doble descendencia: una es que los lobos fueron domesticados más de una vez y que, más tarde, las diferentes poblaciones se mezclaron entre sí; la otra es que la domesticación ocurrió solo una vez, pero estos animales domesticados se mezclaron después con lobos salvajes.')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+            }
+            //interaccion con RA         
+             if (voz === 'lobo ataca') 
+             {
+              console.log("¡Cuidado el lobo esta atacando!");
+              var es = document.querySelector('#avatar');
+              es.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
+              es.setAttribute("scale", '.10 .10 .10');
+              el.setAttribute("position", '0 0 0');
+              el.setAttribute(animation, {'property': position,'to': {x: 1, y: 1, z: 1}, 'startEvents': 'startanim001'});
+             }
+        
+            if (voz === 'Lobo quieto') 
+            {
+              console.log("lobo esta tranquilizandoce");
+              var el = document.querySelector('#avatar');
+              el.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
+              el.setAttribute("scale", '0.1 0.1 0.1');
+              el.setAttribute("position", '0 -0.25 0');
+              el.setAttribute("rotation", '0 0 0');
+              el.setAttribute("visible", 'true');
+        
+              let utterance = new SpeechSynthesisUtterance('Enseguida amigo. aunque ya me estoy cansando.')
+              utterance.lang = 'es-MX'
+              speechSynthesis.speak(utterance)
+        
+            }
+        
+            console.log('Confidence: ' + event.results[0][0].confidence);
+          }
+        
+        
+          recognition.onspeechend = function () {
+            recognition.stop();
+          }
+        
+          recognition.onnomatch = function (event) {
+            diagnostic.setAttribute("value", "No puedo escucharte claramente, por favor repiteme.");
+          }
+        
+          recognition.onerror = function (event) {
+            diagnostic.setAttribute("value", 'Ocurrio un error al escucharte: ' + event.error);
+          }
+        </script>
+        
+        </html>
+        
