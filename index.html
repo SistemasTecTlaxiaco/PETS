@@ -304,6 +304,7 @@
         
           var arreglovoz = [  'hola lobo',
           'gracias lobo',
+          'lobo presentate',
           'eso es todo por ahora',
           'lobo ¿cuando te descubrieron?',
           'lobo ¿desde que año existes?',
@@ -368,6 +369,12 @@
               utterance.lang = 'es-MX'
               speechSynthesis.speak(utterance)
             }
+            if (voz === 'lobo preséntate') {
+                console.log("Hola, esta presentandose!");
+                let utterance = new SpeechSynthesisUtterance('Hola amigo, Mi nombre es wolf, una mascota creada con realidad aumentada, por parte de los alumnos del instituto tecnologico de tlaxiaco de la carrera de sistemas computacionales. Estoy aca para hablarte un poco acerca de mi.')
+                utterance.lang = 'es-MX'
+                speechSynthesis.speak(utterance)
+              }
         
         
             if (voz === 'Gracias lobo') {
@@ -387,7 +394,7 @@
         
             if (voz === 'Lobo cuando te descubrieron') {
               console.log("lobo cuenta su descubrimento!");
-              let utterance = new SpeechSynthesisUtterance('El lobo es una especie de mamífero placentario del orden de los carnívoros. El naturalista Carlos Linneo, en la décima edición de su obra Systema naturæ, publicada en 1758.')
+              let utterance = new SpeechSynthesisUtterance('Nosotros los lobos hemos existido desde hace mucho tiempo.La especie actual, Canis lupus, surge durante el Pleistoceno, hace casi un millón de años.')
               utterance.lang = 'es-MX'
               speechSynthesis.speak(utterance)
             }
@@ -411,7 +418,7 @@
               console.log("¡Cuidado el lobo esta atacando!");
               var es = document.querySelector('#avatar');
               es.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
-              es.setAttribute("scale", '.10 .10 .10');
+              es.setAttribute("scale", '5.0 5.0 5.0');
               el.setAttribute("position", '0 0 0');
               el.setAttribute(animation, {'property': position,'to': {x: 1, y: 1, z: 1}, 'startEvents': 'startanim001'});
              }
@@ -421,7 +428,7 @@
               console.log("lobo esta tranquilizandoce");
               var el = document.querySelector('#avatar');
               el.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
-              el.setAttribute("scale", '0.1 0.1 0.1');
+              el.setAttribute("scale", '2.5 2.5 2.5');
               el.setAttribute("position", '0 -0.25 0');
               el.setAttribute("rotation", '0 0 0');
               el.setAttribute("visible", 'true');
