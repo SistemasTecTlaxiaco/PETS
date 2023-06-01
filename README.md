@@ -9,10 +9,15 @@ La Realidad Aumentada (RA) es una tecnología que complementa la percepción e i
 # Justificacion 🔎
 
 # Requisitos 📚
+
 • Internet
+
 • Navegador
+
 • Marcador 
+
 • Dispositivo con cámara
+
 
 //# Como utilizar la app 🖥️
 
