@@ -10,6 +10,10 @@ Diseñar e implementar un algoritmo de reconocimiento de marcadores de imagen ro
 Desarrollar una interfaz de usuario intuitiva y fácil de usar que permita a los usuarios interactuar con los objetos virtuales superpuestos mediante comandos de voz.
 Investigar y seleccionar tecnologías de procesamiento de voz adecuadas para el reconocimiento y comprensión de comandos de voz naturales.
 Crear una biblioteca de objetos virtuales variados y de alta calidad que puedan ser superpuestos en los marcadores de imagen para proporcionar experiencias interactivas y educativas.
+Optimizar el rendimiento y la eficiencia del sistema de realidad aumentada, reduciendo la latencia y mejorando la fluidez de la experiencia del usuario.
+Realizar pruebas exhaustivas y evaluaciones de usabilidad para garantizar que la aplicación sea intuitiva, fácil de usar y proporcione una experiencia de realidad aumentada atractiva y satisfactoria.
+Explorar posibles aplicaciones educativas de la realidad aumentada basada en marcadores de imagen y comandos de voz, y evaluar su efectividad en entornos de aprendizaje.
+Investigar y aplicar técnicas de aprendizaje automático o inteligencia artificial para mejorar la precisión y el rendimiento del reconocimiento de voz y la detección de marcadores de imagen.
 
 # Justificacion 🔎
 
