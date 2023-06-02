@@ -43,7 +43,7 @@ Además, este proyecto tiene como objetivo explorar el potencial de la realidad 
  • paso 3. Escanear el marcador a la camara.
  
  
-# preguntas a realizar.
+# preguntas a realizar. 👱 ❔
  •  'hola lobo'
 
  • 'gracias lobo',
