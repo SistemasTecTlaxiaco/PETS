@@ -413,22 +413,22 @@
               speechSynthesis.speak(utterance)
             }
             //interaccion con RA         
-             if (voz === 'lobo ataca') 
+             if (voz === 'lobo grande') 
              {
-              console.log("¡Cuidado el lobo esta atacando!");
+              console.log("¡Cuidado el lobo esta grande!");
               var es = document.querySelector('#avatar');
               es.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
-              es.setAttribute("scale", '5.0 5.0 5.0');
+              es.setAttribute("scale", '8.0 8.0 8.0');
               el.setAttribute("position", '0 0 0');
               el.setAttribute(animation, {'property': position,'to': {x: 1, y: 1, z: 1}, 'startEvents': 'startanim001'});
              }
         
-            if (voz === 'Lobo quieto') 
+            if (voz === 'lobo chiquito') 
             {
-              console.log("lobo esta tranquilizandoce");
+              console.log("lobo esta chiquito");
               var el = document.querySelector('#avatar');
               el.setAttribute("src", 'https://cdn.glitch.global/76696fd0-c497-49f4-9664-a11c96210082/asset.glb?v=1685568464551');
-              el.setAttribute("scale", '2.5 2.5 2.5');
+              el.setAttribute("scale", '1.5 1.5 1.5');
               el.setAttribute("position", '0 -0.25 0');
               el.setAttribute("rotation", '0 0 0');
               el.setAttribute("visible", 'true');
