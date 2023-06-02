@@ -22,8 +22,7 @@ La combinación de marcadores de imagen y comandos de voz proporciona una forma 
 Además, este proyecto tiene como objetivo explorar el potencial de la realidad aumentada como herramienta educativa. La posibilidad de superponer información contextual y experiencias interactivas en tiempo real sobre los marcadores de imagen, en combinación con el control mediante comandos de voz, puede ofrecer a los usuarios una forma única de aprender y comprender conceptos complejos de manera más efectiva y atractiva.
 
 # link
-# file:///C:/Users/santi/Downloads/ar/index.html
-
+# https://raw.githack.com/SistemasTecTlaxiaco/WOLFS/master/index.html
 # Requisitos 📚
 
 • Internet
