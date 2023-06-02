@@ -37,8 +37,31 @@ Además, este proyecto tiene como objetivo explorar el potencial de la realidad 
 # Como utilizar la app 🖥️
 
  • Paso 1. Abrir el enlace  https://raw.githack.com/SistemasTecTlaxiaco/WOLFS/master/index.html
+ 
  • Paso 2. Descargar Imagen Marcador.  siguiente enlace  https://github.com/SistemasTecTlaxiaco/WOLFS/blob/master/6b7e3e7f-c9d5-4c78-a021-a893dfd898ba.png
+ 
  • paso 3. Escanear el marcador a la camara.
+ 
+ 
+# preguntas a realizar.
+ •  'hola lobo'
+
+ • 'gracias lobo',
+ 
+ • 'lobo presentate',
+   
+ • 'eso es todo por ahora',
+ 
+ •  'lobo cuando te descubrieron',
+ 
+ •  'lobo desde que año existes',
+        
+ • 'lobo cuenta tu historia',
+          
+ • 'gracias lobo',
+    
+ • 'eso es todo por ahora
+
 
 # Participantes del proyecto 🧑‍ 👧
  | *Nombre* | *Rol* | 
